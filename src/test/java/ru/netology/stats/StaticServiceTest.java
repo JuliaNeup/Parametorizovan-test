@@ -5,36 +5,36 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StaticServiceTest {
-    int[] Sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
     StatisticService service = new StatisticService();
 
     @Test
-    void TotalSales() {
-        assertEquals(180, service.Sum(Sales));
+    void totalSales() {
+        assertEquals(180, service.sum(sales));
     }
 
     @Test
-    void AvgSales() {
-        assertEquals(15, service.Avg(Sales));
+    void avgSales() {
+        assertEquals(15, service.avgSales(sales));
     }
 
     @Test
-    void BestMont() {
-        assertEquals(8, service.Better(Sales));
+    void bestMont() {
+        assertEquals(8, service.better(sales));
     }
 
     @Test
-    void WorthMont() {
-        assertEquals(9, service.Worth(Sales));
+    void worthMont() {
+        assertEquals(9, service.worth(sales));
     }
 
     @Test
-    void MountCntLowAvg() {
-        assertEquals(5, service.LowAvg(Sales));
+    void mountCntLowAvg() {
+        assertEquals(5, service.lowAvg(sales));
     }
 
     @Test
-    void MountCntHiAvg() {
-        assertEquals(5, service.HiAvg(Sales));
+    void mountCntHiAvg() {
+        assertEquals(5, service.hiAvg(sales));
     }
 }

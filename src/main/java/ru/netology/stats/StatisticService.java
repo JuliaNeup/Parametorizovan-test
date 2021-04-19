@@ -1,69 +1,71 @@
 package ru.netology.stats;
 
 public class StatisticService {
-    public int Sum(int[] sales) {
-        int TotalSale = 0;
+    public int sum(int[] sales) {
+        int totalSale = 0;
         for (int i = 0; i < sales.length; i++) {
-            TotalSale = TotalSale + sales[i];
+            totalSale = totalSale + sales[i];
         }
-        return TotalSale;
+        return totalSale;
     }
 
-    public int Avg(int[] sales) {
-        int Avg = 0;
-        Avg=Sum(sales)/sales.length;
-        return Avg;
+    public int avgSales (int[] sales) {
+        int avgSales= 0;
+        avgSales=sum(sales)/sales.length;
+        return avgSales;
     }
 
-    public int Better(int[] sales) {
-        int Month=0;
-        int BestSales=0;
+    public int better(int[] sales) {
+        int month=0;
+        int bestSales=0;
         for (int i=0;i<sales.length;i++){
-            if (sales[i]>BestSales){
-                BestSales=sales[i];
+            if (sales[i]>bestSales){
+                bestSales=sales[i];
             }
         }
         for (int i=0;i<sales.length;i++){
-            if (sales[i]==BestSales){
-                Month=i+1;
+            if (sales[i]==bestSales){
+                month=i+1;
             }
         }
-        return Month;
+        return month;
     }
 
-    public int Worth(int[] sales) {
-        int Month=0;
-        int WorthSales=sales[0];
+    public int worth(int[] sales) {
+        int month=0;
+        int worthSales=sales[0];
         for (int i=1;i<sales.length;i++){
-            if (WorthSales>sales[i]){
-                WorthSales=sales[i];
+            if (worthSales>sales[i]){
+                worthSales=sales[i];
             }
         }
         for (int i=0;i<sales.length;i++){
-            if (sales[i]==WorthSales){
-                Month=i+1;
+            if (sales[i]==worthSales){
+                month=i+1;
             }
         }
-        return Month;
+        return month;
     }
 
-    public int LowAvg(int[] sales) {
-        int MonthCnt=0;
+    public int lowAvg(int[] sales) {
+        int monthCnt=0;
+        int avg=avgSales(sales);
         for (int i=0;i< sales.length;i++){
-            if (sales[i]<Avg(sales)){
-                MonthCnt++;
+            if (sales[i]<avg){
+                monthCnt++;
             }
         }
-        return MonthCnt;
+        return monthCnt;
     }
 
-    public int HiAvg(int[] sales) {
-        int MonthCnt=0;
+    public int hiAvg(int[] sales) {
+        int monthCnt=0;
+        int avg=avgSales(sales);
         for (int i=0;i< sales.length;i++){
-            if (sales[i]>Avg(sales)){
-                MonthCnt++;
+            if (sales[i]>avg){
+                monthCnt++;
             }
         }
-        return MonthCnt;
+        return monthCnt;
     }
 }
